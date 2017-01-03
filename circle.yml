@@ -6,6 +6,11 @@ machine:
   post:
     - npm install -g npm@3
 
+dependencies:
+  override:
+    - npm cache clean
+    - npm install
+
 test:
   override:
     - npm run karma
