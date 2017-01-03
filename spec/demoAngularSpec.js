@@ -56,7 +56,7 @@ describe('demoAngularUnitTest', function() {
       });
 
       it('引数が マイナス の場合', function() {
-          expect(numberCustomFilter(-1000)).toEqual('-');
+          expect(numberCustomFilter(-1000)).toEqual('');
       });
   });
 
