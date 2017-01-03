@@ -2,6 +2,9 @@
 // Generated on Thu Dec 22 2016 00:16:58 GMT+0900 (JST)
 
 module.exports = function(config) {
+
+  var reportDir = process.env['CIRCLE_TEST_REPORTS'] || '.';
+
   config.set({
     basePath: '',
     frameworks: ['jasmine'],
@@ -15,10 +18,15 @@ module.exports = function(config) {
     preprocessors: {
       'src/script/js/*.js': ['coverage']
     },
+    coverageReporter: {
+      dir: reportDir + '/coverage/',
+      reporters: [ { type: 'html' } ]
+    },
     reporters: ['spec', 'coverage'],
     port: 9876,
     colors: true,
-    logLevel: config.LOG_INFO,
+    // logLevel: config.LOG_INFO, config.LOG_ERROR
+    logLevel: config.LOG_DEBUG,
     autoWatch: true,
     browsers: ['PhantomJS'],
     singleRun: false,
