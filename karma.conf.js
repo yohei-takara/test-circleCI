@@ -20,16 +20,13 @@ module.exports = function(config) {
     },
     coverageReporter: {
       dir: reportDir + '/coverage/',
-      reporters: [
-        {
-          type: 'html'
-        }
-      ]
+      reporters: [ { type: 'html' } ]
     },
     reporters: ['spec', 'coverage'],
     port: 9876,
     colors: true,
-    logLevel: config.LOG_INFO,
+    // logLevel: config.LOG_INFO, config.LOG_ERROR
+    logLevel: config.LOG_DEBUG,
     autoWatch: true,
     browsers: ['PhantomJS'],
     singleRun: false,
